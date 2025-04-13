@@ -47,7 +47,7 @@ public class JJMod
 
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
-        ModBlocks.regsister(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -81,6 +81,10 @@ public class JJMod
     {
         //IF (EVENT.GETTABKEY() == CREATIVEMODETABS.BUILDING_BLOCKS)
             //EVENT.ACCEPT(EXAMPLE_BLOCK_ITEM);
+
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.SAPPHIRE_BLOCK_ITEM);
+        }
 
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.SAPPHIRE);

@@ -22,9 +22,9 @@ public class ModCreativeModTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.SAPPHIRE.get());
 
-                        pOutput.accept(Items.DIAMOND);
-
                         pOutput.accept(ModBlocks.SAPPHIRE_BLOCK.get());
+
+                        pOutput.accept(ModItems.SAPPHIRE_CATALYST.get());
                     })
                     .build());
 

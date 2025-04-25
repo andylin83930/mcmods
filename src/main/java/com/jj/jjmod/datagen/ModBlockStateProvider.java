@@ -14,7 +14,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     @Override
-    protected void registerStatesAndModels() {
+    protected void registerStatesAndModels()
+    {
         blockWithItem(ModBlocks.SAPPHIRE_BLOCK);
     }
 

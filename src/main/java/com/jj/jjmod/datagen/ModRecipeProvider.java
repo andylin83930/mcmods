@@ -5,7 +5,7 @@ import com.jj.jjmod.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraft.world.item.Items;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -22,6 +22,15 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("SSS")
                 .pattern("SSS")
                 .define('S', ModItems.SAPPHIRE.get())
+                .unlockedBy(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SAPPHIRE_CATALYST.get())
+                .pattern("SSS")
+                .pattern("SXS")
+                .pattern("SSS")
+                .define('S', Items.GLASS)
+                .define('X', ModItems.SAPPHIRE.get())
                 .unlockedBy(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
                 .save(pRecipeOutput);
 
